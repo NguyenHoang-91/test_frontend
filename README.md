@@ -11,7 +11,7 @@ Install all dependencies listed in package.json by running:
 npm install
 
 On "App.jsx" make sure edit those api link follow your api host [your API]
-const App = () => {
+
   // Fetch all posts
   const fetchNewestPosts = async () => {
     const res = await fetch('[your API]/api/posts/newest');
