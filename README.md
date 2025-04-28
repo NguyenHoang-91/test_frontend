@@ -10,11 +10,11 @@ cd frontend
 Install all dependencies listed in package.json by running:
 npm install
 
-On App.jsx make sure edit those api link follow your api host
+On "App.jsx" make sure edit those api link follow your api host [your API]
 const App = () => {
   // Fetch all posts
   const fetchNewestPosts = async () => {
-    const res = await fetch('http://127.0.0.1:8000/api/posts/newest');
+    const res = await fetch('[your API]/api/posts/newest');
     const data = await res.json();
     return data;
   };
