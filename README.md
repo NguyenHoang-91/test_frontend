@@ -1,12 +1,48 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Steps for someone who clones your project:
 
-Currently, two official plugins are available:
+Clone the repository using git clone <repository-url>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Navigate into the frontend directory:
+cd frontend
 
-## Expanding the ESLint configuration
+Install all dependencies listed in package.json by running:
+npm install
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+On App.jsx make sure edit those api link follow your api host
+const App = () => {
+  // Fetch all posts
+  const fetchNewestPosts = async () => {
+    const res = await fetch('http://127.0.0.1:8000/api/posts/newest');
+    const data = await res.json();
+    return data;
+  };
+
+  // Fetch single post by slug
+  const fetchPostBySlug = async (slug) => {
+    const res = await fetch(`[your API]/api/posts/${slug}`);
+    const data = await res.json();
+    return data;
+  };
+
+  // Fetch all categories
+  const fetchAllCategories = async () => {
+    const res = await fetch('[your API]/api/categories');
+    const data = await res.json();
+    return data;
+  };
+
+  // Fetch posts by category slug
+  const fetchPostsByCategory = async (slug) => {
+    const res = await fetch(`[your API]/api/categories/${slug}/posts`);
+    const data = await res.json();
+    return data;
+  };
+
+  // Fetch newest posts by category slug
+  const fetchNewestPostsByCategory = async (slug) => {
+    const res = await fetch(`[your API]/api/categories/${slug}/newest/posts`);
+    const data = await res.json();
+    return data;
+  };
