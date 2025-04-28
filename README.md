@@ -5,9 +5,11 @@ Steps for someone who clones your project:
 Clone the repository using git clone <repository-url>
 
 Navigate into the frontend directory:
+
 cd frontend
 
 Install all dependencies listed in package.json by running:
+
 npm install
 
 On "App.jsx" make sure edit those api link follow your api host [your API]
